@@ -63,10 +63,6 @@ export default function SkillsJourney() {
           </aside>
         </div>
       </div>
-      <div className="mt-6 flex items-start gap-4 rounded-2xl p-5" style={{ background: "var(--blush)" }}>
-        <svg aria-hidden="true" viewBox="0 0 24 24" className="w-7 h-7 shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 21S3 15 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 7-9 13-9 13Z" /><path d="M4 12h4l2-4 3 8 2-4h5" /></svg>
-        <div><h3 className="font-display text-lg text-ink">A healthcare thread throughout</h3><p className="mt-1 text-sm text-ink-soft leading-relaxed">Medical imaging, survival modeling, and clinical data pipelines connect domain knowledge with engineering. Explore the first three steps for clinical data, surgical vision, and procedural AI.</p></div>
-      </div>
       <Squiggle className="w-24 mt-6 mx-auto" color="var(--secondary)" />
     </section>
   );
