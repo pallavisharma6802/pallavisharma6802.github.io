@@ -50,7 +50,7 @@ export default function Nav() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle color theme"
-            className="h-9 w-9 flex items-center justify-center rounded-full border border-line text-ink-soft hover:text-accent transition-colors cursor-pointer"
+            className="h-11 w-11 flex items-center justify-center rounded-full border border-line text-ink-soft hover:text-accent transition-colors cursor-pointer"
           >
             {theme === "light" ? "☀" : "☾"}
           </button>
@@ -65,6 +65,11 @@ export default function Nav() {
           </a>
         </div>
       </div>
+      <nav aria-label="Mobile navigation" className="md:hidden grid grid-cols-4 border-t border-line px-3">
+        {[...links, { href: "#contact", label: "Contact" }].map((link) => (
+          <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined} className="flex min-h-12 items-center justify-center font-mono text-[11px] uppercase tracking-wide rounded-lg focus-visible:outline-2 focus-visible:outline-current" style={{ color: pathname === link.href ? "var(--ink)" : "var(--ink-soft)", background: pathname === link.href ? "var(--accent-soft)" : undefined }}>{link.label}</Link>
+        ))}
+      </nav>
     </header>
   );
 }

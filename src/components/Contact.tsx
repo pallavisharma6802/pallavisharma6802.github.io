@@ -2,17 +2,17 @@ import { profile } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 border-t border-line">
+    <section id="contact" className="py-16 sm:py-32 border-t border-line">
       <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
         <h2 className="font-calligraphic text-4xl sm:text-5xl text-ink leading-tight">
-          Let's talk.
+          Let&apos;s talk.
         </h2>
         <p className="mt-4 text-ink-soft">Focused on ML and AI roles. The title matters less than the problem.</p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-mono text-sm text-white transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-full max-w-full break-all px-4 sm:px-7 py-3.5 font-mono text-xs sm:text-sm text-white transition-transform hover:-translate-y-0.5"
             style={{ background: "var(--accent)" }}
           >
             {profile.email}

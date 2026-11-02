@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
 }
 
 body {
@@ -160,4 +161,14 @@ body {
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
+}
+
+/* Allow long project names and technical terms to wrap on small screens. */
+main {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  html { scroll-padding-top: 5rem; }
 }

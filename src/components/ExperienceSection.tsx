@@ -13,11 +13,11 @@ export default function ExperienceSection() {
   return (
     <div>
       {experience.map((e, i) => (
-        <div key={e.role + e.org} className="grid grid-cols-[44px_1fr] sm:grid-cols-[56px_1fr] gap-x-4 sm:gap-x-6">
+        <div key={e.role + e.org} className="grid grid-cols-[20px_minmax(0,1fr)] sm:grid-cols-[56px_minmax(0,1fr)] gap-x-2 sm:gap-x-6">
           <div className="relative flex flex-col items-center">
             <div className="relative shrink-0 pt-1">
               <span
-                className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full border-2"
+                className="relative z-10 flex h-5 w-5 sm:h-7 sm:w-7 items-center justify-center rounded-full border-2"
                 style={{ borderColor: "var(--accent)", background: "var(--bg)" }}
               >
                 <span className="h-2 w-2 rounded-full" style={{ background: "var(--accent)" }} />
@@ -35,7 +35,7 @@ export default function ExperienceSection() {
             )}
           </div>
 
-          <article className="reveal rounded-2xl border border-line bg-raised p-5 sm:p-7 mb-10" style={{ animationDelay: `${Math.min(i * 0.05, 0.25)}s` }}>
+          <article className="reveal rounded-2xl border border-line bg-raised min-w-0 p-4 sm:p-7 mb-10" style={{ animationDelay: `${Math.min(i * 0.05, 0.25)}s` }}>
             {i === 0 && <div className="font-hand text-secondary text-lg mb-1">you are here</div>}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <h3 className="font-display text-lg sm:text-xl text-ink">{e.role}</h3>

@@ -24,7 +24,13 @@ export default function SkillsJourney() {
         <p className="mt-4 text-sm leading-relaxed text-ink-soft">Healthcare, agents, or production ML: the tools change with the problem. Explore each step to see what I use and where I’ve put it to work.</p>
         <Sparkle className="absolute -right-8 top-2 w-7 hidden sm:block" />
       </div>
-      <div className="relative grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6" aria-label="Product development stages">
+      <div className="sm:hidden mb-5">
+        <label htmlFor={`${id}-stage`} className="block text-sm text-ink-soft mb-2">Explore a step</label>
+        <select id={`${id}-stage`} value={active} onChange={(event) => setActive(Number(event.target.value))} className="w-full min-h-12 rounded-xl border border-line px-3 text-base text-ink" style={{ background: "var(--bg-raised)" }}>
+          {stages.map((item, index) => <option key={item.title} value={index}>0{index + 1} · {item.title}</option>)}
+        </select>
+      </div>
+      <div className="relative hidden sm:grid sm:grid-cols-5 gap-3 mb-6" aria-label="Product development stages">
         <div className="absolute hidden sm:block left-8 right-8 top-7 border-t border-dashed border-line" aria-hidden="true" />
         {stages.map((item, index) => (
           <button key={item.title} type="button" aria-pressed={active === index} aria-controls={`${id}-panel`} onClick={() => setActive(index)} className="relative flex sm:flex-col items-center sm:items-start gap-3 p-4 rounded-2xl border text-left cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current hover:border-current" style={{ background: active === index ? "var(--accent-soft)" : "var(--bg-raised)", borderColor: active === index ? "var(--accent)" : "var(--line)", color: "var(--ink)" }}>
@@ -35,7 +41,7 @@ export default function SkillsJourney() {
       </div>
       <div id={`${id}-panel`} className="rounded-3xl border border-line overflow-hidden bg-raised">
         <div className="grid md:grid-cols-[1.15fr_1fr]">
-          <div className="p-6 sm:p-8">
+          <div className="p-4 sm:p-8">
             <p className="font-mono text-xs uppercase tracking-wide text-ink-soft" role="status">Step 0{active + 1} / 05</p>
             <h3 className="font-display text-2xl mt-3 text-ink">{stage.title}</h3>
             <p className="text-sm text-ink-soft leading-relaxed mt-3 mb-6">{stage.description}</p>
@@ -48,7 +54,7 @@ export default function SkillsJourney() {
               </div>
             ))}
           </div>
-          <aside aria-label="Projects using these skills" className="p-6 sm:p-8 border-t md:border-t-0 md:border-l border-line" style={{ background: "var(--bg)" }}>
+          <aside aria-label="Projects using these skills" className="p-4 sm:p-8 border-t md:border-t-0 md:border-l border-line" style={{ background: "var(--bg)" }}>
             <p className="font-hand text-xl text-secondary">Where it comes to life</p>
             <div className="mt-4 space-y-4">
               {stage.projects.map((slug) => projects.find((project) => project.slug === slug)).map((project) => project && (
