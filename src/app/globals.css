@@ -1,33 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #faf6ef;
-  --bg-raised: #f1ead9;
-  --ink: #1c1917;
-  --ink-soft: #5c5347;
-  --ink-faint: #8a8070;
-  --line: #e2d8c3;
-  --accent: #b5451f;
-  --accent-soft: #e8c9a0;
-  --accent-ink: #fff5ec;
-  --healthcare-accent: #0f6e5e;
-  --healthcare-soft: #cfe6de;
-  --shadow: rgba(28, 25, 23, 0.08);
+  --bg: #fdf6ef;
+  --bg-raised: #f8ebe0;
+  --blush: #f3d9da;
+  --ink: #3a2a28;
+  --ink-soft: #725b53;
+  --ink-faint: #a8938a;
+  --line: #ecdac8;
+  --accent: #c6708a;
+  --accent-soft: #f3d9df;
+  --accent-ink: #ffffff;
+  --secondary: #d99a3c;
+  --secondary-soft: #f6e2b8;
+  --shadow: rgba(58, 42, 40, 0.1);
 }
 
 :root[data-theme="dark"] {
-  --bg: #15130f;
-  --bg-raised: #1e1b16;
-  --ink: #f3ede1;
-  --ink-soft: #c2b8a6;
-  --ink-faint: #8c8273;
-  --line: #332e25;
-  --accent: #ff8a4f;
-  --accent-soft: #4a2e1d;
-  --accent-ink: #1e1109;
-  --healthcare-accent: #4fd3ae;
-  --healthcare-soft: #16352c;
-  --shadow: rgba(0, 0, 0, 0.45);
+  --bg: #211815;
+  --bg-raised: #2b201c;
+  --blush: #3a2730;
+  --ink: #f6ebe3;
+  --ink-soft: #cdb3a8;
+  --ink-faint: #8f766c;
+  --line: #3e2e27;
+  --accent: #e78fa3;
+  --accent-soft: #452a32;
+  --accent-ink: #211815;
+  --secondary: #e3a655;
+  --secondary-soft: #44331a;
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
 html {
@@ -54,6 +56,23 @@ body {
 
 .font-mono {
   font-family: var(--font-mono), monospace;
+}
+
+.font-hand {
+  font-family: var(--font-hand), cursive;
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-blush {
+  background: var(--blush);
+}
+
+.highlight-marker {
+  background: linear-gradient(to top, var(--secondary-soft) 45%, transparent 45%);
+  padding: 0 0.15em;
 }
 
 ::selection {
@@ -86,6 +105,15 @@ body {
   text-decoration-color: var(--accent-soft);
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px) rotate(6deg);
+  }
 }
 
 @keyframes fade-up {

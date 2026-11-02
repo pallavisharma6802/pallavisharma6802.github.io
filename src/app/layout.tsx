@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Fraunces, Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
-import { LensProvider } from "@/context/LensContext";
 import { ThemeProvider } from "@/context/ThemeContext";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 // Instrument Serif: the calligraphic, hand-lettered display face used for
 // headlines/pull-quotes. Fraunces (variable) backs it up for anything that
@@ -34,10 +35,15 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const hand = Caveat({
+  variable: "--font-hand",
+  subsets: ["latin"],
+  weight: ["500", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Pallavi Sharma — ML Engineer",
-  description:
-    "ML Engineer building agentic systems and clinical AI that know when they're wrong — verification, LLM safety, and healthcare ML.",
+  title: "Pallavi Sharma, ML Engineer",
+  description: "Portfolio of Pallavi Sharma, an ML engineer based in Madison, WI.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -45,14 +51,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${calligraphic.variable} ${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
+      className={`${calligraphic.variable} ${display.variable} ${body.variable} ${mono.variable} ${hand.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <LensProvider>
-            <div className="paper-texture" />
-            {children}
-          </LensProvider>
+          <div className="relative z-10 flex-1 flex flex-col">
+            <Nav />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
