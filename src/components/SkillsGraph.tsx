@@ -1,127 +1,112 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { skills } from "@/lib/data";
 
-const HUB_RADIUS = 33;
-const SAT_RADIUS = 46;
-
-function polar(cx: number, cy: number, r: number, angle: number) {
-  return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
-}
-
-function spreadFor(count: number) {
-  return Math.min((160 * Math.PI) / 180, 0.5 + count * 0.34);
-}
+const areas = [
+  { source: "Clinical & Healthcare Domain", label: "Healthcare & clinical ML", description: "Clinical data, survival analysis, and medical imaging techniques for healthcare problems." },
+  { source: "Data & Systems", label: "Data pipelines & forecasting", description: "Ingest, transform, and analyze data; model trends and build reliable data systems." },
+  { source: "ML & Deep Learning", label: "Model training & deep learning", description: "Train and evaluate models for images, language, and structured data." },
+  { source: "LLMs & GenAI Engineering", label: "AI agents & language models", description: "Build tool-using agents, retrieve grounded information, and evaluate language model behavior." },
+  { source: "Inference & Optimization", label: "Efficient inference & serving", description: "Reduce model size and inference cost, and scale workloads across available hardware." },
+  { source: "Full-Stack Engineering", label: "Applications & APIs", description: "Turn models into usable products with interfaces, services, and APIs." },
+  { source: "MLOps & Infra", label: "Deployment & MLOps", description: "Package, deploy, track, and maintain models and applications." },
+  { source: "AWS", label: "Cloud · AWS", description: "AWS services for storage, model development, and application deployment." },
+  { source: "Google Cloud", label: "Cloud · Google Cloud", description: "Google Cloud tools for analytics, data processing, and machine learning." },
+  { source: "Azure", label: "Cloud · Azure", description: "Azure services for machine learning, language, and cloud infrastructure." },
+  { source: "Collaboration & Delivery", label: "Collaboration & delivery", description: "Work with stakeholders and teams to scope, document, and deliver useful systems." },
+];
+const toolkit = areas.map((area) => ({ ...area, items: skills.find((group) => group.label === area.source)?.items ?? [] }));
 
 export default function SkillsGraph() {
-  const [active, setActive] = useState<number | null>(null);
-  const n = skills.length;
-
-  const hubs = skills.map((group, i) => {
-    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
-    const pos = polar(50, 50, HUB_RADIUS, angle);
-    return { group, angle, pos };
-  });
-
-  const activeHub = active !== null ? hubs[active] : null;
-  const satellites =
-    activeHub &&
-    activeHub.group.items.map((item, j) => {
-      const m = activeHub.group.items.length;
-      const spread = spreadFor(m);
-      const start = activeHub.angle - spread / 2;
-      const step = m > 1 ? spread / (m - 1) : 0;
-      const satAngle = start + j * step;
-      return { item, pos: polar(50, 50, SAT_RADIUS, satAngle) };
-    });
+  const [active, setActive] = useState(0);
+  const [query, setQuery] = useState("");
+  const id = useId();
+  const normalized = query.trim().toLowerCase();
+  const matches = toolkit.map((group) => ({
+    ...group,
+    items: group.items.filter((item) =>
+      `${group.label} ${group.source} ${item.name}`.toLowerCase().includes(normalized)
+    ),
+  }));
+  const selected = matches[active];
+  const visibleGroups = normalized ? matches.filter((group) => group.items.length) : [selected];
+  const total = skills.reduce((sum, group) => sum + group.items.length, 0);
+  const resultCount = matches.reduce((sum, group) => sum + group.items.length, 0);
 
   return (
-    <div>
-      <div className="relative aspect-square w-full max-w-[46rem] mx-auto select-none p-10 sm:p-16">
-        <div className="absolute rounded-full border border-dashed" style={{ borderColor: "var(--line)", inset: "17%" }} aria-hidden />
-        <div className="absolute rounded-full border border-dashed" style={{ borderColor: "var(--line)", inset: "4%" }} aria-hidden />
-
-        <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden>
-          {hubs.map((h, i) => (
-            <line
-              key={`spoke-${i}`}
-              x1={50}
-              y1={50}
-              x2={h.pos.x}
-              y2={h.pos.y}
-              stroke={active === i ? "var(--accent)" : "var(--line)"}
-              strokeWidth={active === i ? 0.6 : 0.4}
-            />
-          ))}
-          {activeHub &&
-            satellites &&
-            satellites.map((s, j) => (
-              <line key={`sat-line-${j}`} x1={activeHub.pos.x} y1={activeHub.pos.y} x2={s.pos.x} y2={s.pos.y} stroke="var(--accent)" strokeWidth="0.45" opacity={0.6} />
-            ))}
-        </svg>
-
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center font-display text-xs sm:text-sm shadow-md z-10 text-center px-2"
-          style={{ width: "16%", height: "16%", background: "var(--ink)", color: "var(--bg)" }}
-        >
-          Skills
+    <div className="rounded-3xl border border-line overflow-hidden bg-raised">
+      <div className="flex flex-wrap items-end justify-between gap-5 p-6 sm:p-8 border-b border-line">
+        <div>
+          <h4 className="font-display text-2xl text-ink">Explore my toolkit</h4>
+          <p className="mt-2 text-sm text-ink-soft">{skills.length} areas · {total} skills. Select an area or search across all skills.</p>
         </div>
-
-        {hubs.map((h, i) => (
-          <button
-            key={h.group.label}
-            onClick={() => setActive(active === i ? null : i)}
-            className="reveal absolute -translate-x-1/2 -translate-y-1/2 rounded-full border-2 flex items-center justify-center text-center font-mono uppercase tracking-wide leading-[1.15] px-1.5 cursor-pointer transition-all hover:scale-105 z-10 shadow-sm"
-            style={{
-              left: `${h.pos.x}%`,
-              top: `${h.pos.y}%`,
-              width: "16%",
-              height: "16%",
-              fontSize: "0.56rem",
-              borderColor: "var(--accent)",
-              background: active === i ? "var(--accent)" : "var(--bg)",
-              color: active === i ? "white" : "var(--ink)",
-              animationDelay: `${i * 0.03}s`,
-            }}
-          >
-            {h.group.label}
-          </button>
-        ))}
-
-        {satellites &&
-          satellites.map((s, j) => {
-            const t = (s.item.level - 60) / 40;
-            return (
-              <span
-                key={s.item.name}
-                title={`${s.item.level}%`}
-                className="reveal absolute -translate-x-1/2 -translate-y-1/2 rounded-full border text-center font-display shadow-sm"
-                style={{
-                  left: `${s.pos.x}%`,
-                  top: `${s.pos.y}%`,
-                  width: "6.4rem",
-                  fontSize: `${0.6 + t * 0.1}rem`,
-                  lineHeight: 1.2,
-                  padding: `${0.3 + t * 0.12}rem ${0.5}rem`,
-                  borderColor: "var(--accent)",
-                  background: "var(--bg-raised)",
-                  color: "var(--ink)",
-                  animationDelay: `${j * 0.03}s`,
-                }}
-              >
-                {s.item.name}
-              </span>
-            );
-          })}
+        <div className="w-full sm:w-64">
+          <label htmlFor={`${id}-search`} className="block font-mono text-xs text-ink-soft mb-2">Find a skill</label>
+          <input
+            id={`${id}-search`}
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Try vLLM, PyTorch, or AWS"
+            className="w-full rounded-xl border border-line px-4 py-3 text-sm text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+            style={{ background: "var(--bg)" }}
+          />
+        </div>
       </div>
 
-      {!activeHub && (
-        <p className="text-center text-xs text-ink-faint mt-4 font-hand text-base text-secondary">click a hub to explore</p>
-      )}
-      {activeHub && (
-        <p className="text-center text-xs text-ink-faint mt-4">Node size reflects depth of experience &middot; hover a skill for the number</p>
-      )}
+      <div className="grid lg:grid-cols-[1fr_1fr]">
+        <nav aria-label="Skill areas" className="relative p-6 sm:p-8 lg:border-r border-b lg:border-b-0 border-line">
+          <div className="mx-auto w-fit rounded-full px-5 py-2 font-mono text-xs mb-7" style={{ background: "var(--ink)", color: "var(--bg)" }}>My toolkit</div>
+          <div className="absolute top-16 bottom-12 left-1/2 w-px bg-current opacity-15 pointer-events-none" aria-hidden="true" />
+          <div className="relative grid grid-cols-2 gap-x-6 gap-y-3">
+            {matches.map((group, index) => {
+              const isActive = !normalized && active === index;
+              return (
+                <div key={group.label} className="relative flex items-center">
+                  <span aria-hidden="true" className={`absolute h-px w-3 bg-current opacity-25 ${index % 2 ? "-left-3" : "-right-3"}`} />
+                  <button
+                    type="button"
+                    aria-pressed={isActive}
+                    aria-controls={`${id}-details`}
+                    onClick={() => { setActive(index); setQuery(""); }}
+                    className="relative w-full min-h-20 rounded-2xl border px-3 py-3 text-left transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current hover:border-current"
+                    style={{
+                      background: isActive ? "var(--accent-soft)" : "var(--bg)",
+                      borderColor: isActive ? "var(--accent)" : "var(--line)",
+                      color: "var(--ink)",
+                    }}
+                  >
+                    <span className="block text-sm font-medium leading-snug">{group.label}</span>
+                    <span className="block mt-1 text-xs text-ink-soft">{normalized ? `${group.items.length} matches` : `${group.items.length} skills`}</span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </nav>
+
+        <section id={`${id}-details`} aria-label="Skills in selected area" className="p-6 sm:p-8 min-w-0">
+          <p role="status" className="font-mono text-xs text-ink-soft mb-6">
+            {normalized ? `${resultCount} ${resultCount === 1 ? "skill" : "skills"} found` : "Selected area"}
+          </p>
+          {visibleGroups.map((group) => (
+            <div key={group.label} className="mb-8 last:mb-0">
+              <h4 className="font-display text-2xl text-ink mb-2">{group.label}</h4>
+              <p className="mb-5 text-sm leading-relaxed text-ink-soft">{group.description}</p>
+              <ul className="space-y-3">
+                {group.items.map((item) => (
+                  <li key={item.name} className="flex items-start gap-3 rounded-xl border border-line px-4 py-3" style={{ background: "var(--bg)" }}>
+                    <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--accent)" }} />
+                    <span className="text-sm text-ink leading-relaxed">{item.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {resultCount === 0 && <p className="text-sm text-ink-soft">No skills match “{query}”. Try another tool or area.</p>}
+        </section>
+      </div>
     </div>
   );
 }

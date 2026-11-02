@@ -285,6 +285,16 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
+    label: "Inference & Optimization",
+    items: [
+      { name: "vLLM", level: 80 },
+      { name: "Ray", level: 80 },
+      { name: "ONNX / ONNX Runtime", level: 80 },
+      { name: "Quantization", level: 80 },
+      { name: "Knowledge Distillation", level: 80 },
+    ],
+  },
+  {
     label: "ML & Deep Learning",
     items: [
       { name: "PyTorch", level: 90 },

@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pallavi Sharma · ML Engineer
 
-## Getting Started
+My personal portfolio, featuring the AI products, ML systems, and research I work on across healthcare and IT.
 
-First, run the development server:
+**[Visit the portfolio →](https://pallavisharma6802.github.io/)**
+
+[![Deploy to GitHub Pages](https://github.com/pallavisharma6802/pallavisharma6802.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/pallavisharma6802/pallavisharma6802.github.io/actions/workflows/deploy.yml)
+
+[LinkedIn](https://www.linkedin.com/in/pallavisharma6802/) · [GitHub](https://github.com/pallavisharma6802) · [Email](mailto:sharmapallavi6802@gmail.com)
+
+## About me
+
+I'm an ML engineer based in Madison, Wisconsin, with an MS in Data Science from the University of Wisconsin–Madison. I build AI products end to end: agents, retrieval pipelines, ML models, APIs, and the interfaces people use to work with them.
+
+My work spans agentic AI, LLM evaluation, medical imaging, and production ML. I enjoy working across disciplines and turning a domain problem into a system a team can use.
+
+## Explore the portfolio
+
+| Page | What you'll find |
+| --- | --- |
+| [Home](https://pallavisharma6802.github.io/) | My background, areas of focus, and contact details |
+| [Work](https://pallavisharma6802.github.io/work) | Projects with technical context, results, and source links |
+| [Experience](https://pallavisharma6802.github.io/experience) | Roles, research, and education |
+| [Skills](https://pallavisharma6802.github.io/skills) | An interactive skills graph and skills grouped by area |
+
+### Selected projects
+
+- **[Agentic Multi-Cloud Ticket Resolution](https://github.com/pallavisharma6802/Multi-Cloud-AI-Agent-for-Ticket-Resolution)** — A multi-agent IT support pipeline with retrieval, answer grading, and an evaluation harness.
+- **[DoIT Knowledge Base Agent](https://github.com/pallavisharma6802/DoIT-Help-Desk-Agent)** — A knowledge base assistant with cited answers and escalation to human support.
+- **[Trust Under Pressure](https://github.com/pallavisharma6802/Trust-Under-Pressure-Manipulation-Resistance-in-LLM-Agents)** — Empirical studies of manipulation resistance in tool-calling and multi-agent LLM systems.
+- **[Procedural Intelligence](https://github.com/pallavisharma6802/Procedural-Intelligence-prototype)** — A prototype that reconstructs a clinical procedure timeline and generates documents from a shared case state.
+
+## Built with
+
+Next.js App Router, React, TypeScript, and Tailwind CSS. The site includes responsive layouts, light and dark themes, project filtering, and an interactive skills graph.
+
+The site is exported as static files and hosted on **GitHub Pages**, with deployment handled by GitHub Actions.
+
+## Run locally
+
+Use Node.js 20, matching the deployment workflow.
 
 ```bash
+git clone https://github.com/pallavisharma6802/pallavisharma6802.github.io.git
+cd pallavisharma6802.github.io
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Build the site and export static files to `out/` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Update the portfolio
 
-## Learn More
+- **Profile, projects, experience, skills, and education:** `src/lib/data.ts`
+- **Pages:** `src/app/` — home, work, experience, and skills
+- **UI components:** `src/components/`
+- **Colors, typography, and global styles:** `src/app/globals.css`
+- **Theme behavior:** `src/context/ThemeContext.tsx`
+- **Images and other static assets:** `public/`
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pushing to `main` triggers the [Deploy to GitHub Pages workflow](.github/workflows/deploy.yml). It installs dependencies with `npm ci`, runs `npm run build`, uploads `out/`, and deploys the result to GitHub Pages. The workflow can also be started manually from the repository's Actions tab.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Static export is configured with `output: "export"` in `next.config.ts`. Keep additions compatible with static hosting.

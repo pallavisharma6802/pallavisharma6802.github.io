@@ -1,9 +1,15 @@
 import { education, toolLogos } from "@/lib/data";
 import SkillsGraph from "./SkillsGraph";
+import SkillsJourney from "./SkillsJourney";
 
 export default function SkillsGrid() {
   return (
     <div>
+      <SkillsJourney />
+      <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Browse the full toolkit</h3>
+      <SkillsGraph />
+
+      <div className="mt-14">
       <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Tools &amp; Platforms</h3>
       <div className="grid grid-cols-4 sm:grid-cols-8 gap-3 mb-14">
         {toolLogos.map((t) => (
@@ -24,9 +30,7 @@ export default function SkillsGrid() {
         ))}
       </div>
 
-      <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Skill Graph</h3>
-      <SkillsGraph />
-
+      </div>
       <div className="mt-16 pt-10 border-t border-line">
         <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Education</h3>
         <div className="space-y-4">
