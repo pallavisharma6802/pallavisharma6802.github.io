@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { skills } from "@/lib/data";
 
-const HUB_RADIUS = 27;
-const SAT_RADIUS = 41;
+const HUB_RADIUS = 33;
+const SAT_RADIUS = 46;
 
 function polar(cx: number, cy: number, r: number, angle: number) {
   return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
 }
 
 function spreadFor(count: number) {
-  return Math.min((140 * Math.PI) / 180, 0.6 + count * 0.3);
+  return Math.min((160 * Math.PI) / 180, 0.5 + count * 0.34);
 }
 
 export default function SkillsGraph() {
@@ -38,13 +38,9 @@ export default function SkillsGraph() {
 
   return (
     <div>
-      <div className="relative aspect-square w-full max-w-xl mx-auto select-none p-6 sm:p-10">
-        <div className="absolute inset-6 sm:inset-10 rounded-full border border-dashed" style={{ borderColor: "var(--line)" }} aria-hidden />
-        <div
-          className="absolute rounded-full border border-dashed"
-          style={{ borderColor: "var(--line)", inset: "calc(16% + 1.5rem)" }}
-          aria-hidden
-        />
+      <div className="relative aspect-square w-full max-w-[46rem] mx-auto select-none p-10 sm:p-16">
+        <div className="absolute rounded-full border border-dashed" style={{ borderColor: "var(--line)", inset: "17%" }} aria-hidden />
+        <div className="absolute rounded-full border border-dashed" style={{ borderColor: "var(--line)", inset: "4%" }} aria-hidden />
 
         <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden>
           {hubs.map((h, i) => (
@@ -80,9 +76,9 @@ export default function SkillsGraph() {
             style={{
               left: `${h.pos.x}%`,
               top: `${h.pos.y}%`,
-              width: "20%",
-              height: "20%",
-              fontSize: "0.52rem",
+              width: "16%",
+              height: "16%",
+              fontSize: "0.56rem",
               borderColor: "var(--accent)",
               background: active === i ? "var(--accent)" : "var(--bg)",
               color: active === i ? "white" : "var(--ink)",
