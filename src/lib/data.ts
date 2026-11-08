@@ -633,8 +633,10 @@ export const whatIDo = [
 ];
 
 export const facts = [
-  "I'm originally from Hyderabad, India, and have been in Madison, Wisconsin since 2024.",
-  "I finished my MS in Data Science at UW–Madison in 2026. Before that, I studied Computer Science with a focus on AI and ML in Bengaluru.",
+  "I used to answer IT support tickets. Eventually, I built an agent around the part that kept repeating: finding the right article and figuring out whether it actually answered the question.",
+  "I’ve spent time making a model smaller just to see how much capability I could keep. One of those experiments became a sentiment model that runs on a regular CPU.",
+  "I’m drawn to results that need explaining. In one experiment, giving agents a majority vote made them easier to manipulate. Understanding why was more interesting than the score itself.",
+  "My projects often cross into each other: a question about evaluation becomes a training experiment, and a training experiment becomes a question about deployment."
 ];
 
 export const methodologies = ["Agile / Scrum", "CI/CD", "Code Review", "Cross-Functional Collaboration", "Technical Documentation"];
