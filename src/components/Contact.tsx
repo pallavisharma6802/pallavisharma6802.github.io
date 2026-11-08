@@ -7,7 +7,7 @@ export default function Contact() {
         <h2 className="font-calligraphic text-4xl sm:text-5xl text-ink leading-tight">
           Let&apos;s talk.
         </h2>
-        <p className="mt-4 text-ink-soft">Focused on ML and AI roles. The title matters less than the problem.</p>
+        <p className="mt-4 text-ink-soft">Open to AI/ML engineering and data science roles.</p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
           <a

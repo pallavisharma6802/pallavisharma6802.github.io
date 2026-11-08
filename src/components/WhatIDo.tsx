@@ -1,6 +1,12 @@
 import { whatIDo } from "@/lib/data";
 
 const icons: Record<string, React.ReactNode> = {
+  data: (
+    <>
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" strokeLinecap="round" />
+    </>
+  ),
   agents: (
     <>
       <circle cx="6" cy="6" r="2.5" />

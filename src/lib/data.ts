@@ -14,7 +14,7 @@ export const profile = {
 export const bio = {
   greeting: "Hi, I'm Pallavi.",
   body:
-    "I'm an ML engineer with 4+ years building AI products end to end: agents, LLM pipelines, full-stack apps, and ML systems across financial services, enterprise applications, and healthcare research. I build beyond the model: the data pipelines, APIs, and applications that make it useful. I thrive in cross-functional, collaborative teams, and I lean toward customer-facing roles where I can work directly with the people using what I build. I pick up a new domain fast, and I'm focused on ML and AI work broadly. The title matters less than the problem.",
+    "I'm an ML engineer with 4+ years building AI products end to end: agents, LLM pipelines, full-stack apps, and ML systems across financial services, enterprise applications, and healthcare research. I build beyond the model: the data pipelines, APIs, and applications that make it useful. I thrive in cross-functional, collaborative teams, and I lean toward customer-facing roles where I can work directly with the people using what I build. I pick up a new domain fast, and I'm focused on ML and AI work broadly.",
 };
 
 
@@ -269,205 +269,372 @@ export const projects: Project[] = [
 
 export const skills: SkillGroup[] = [
   {
-    label: "LLMs & GenAI Engineering",
-    items: [
-      { name: "Agent Orchestration (LangGraph)", level: 90 },
-      { name: "Multi-Agent Systems", level: 88 },
-      { name: "RAG / CRAG / Self-RAG", level: 90 },
-      { name: "LLM Evaluation & Evals", level: 90 },
-      { name: "Fine-Tuning (LoRA/PEFT)", level: 85 },
-      { name: "QLoRA", level: 80 },
-      { name: "Embeddings / Semantic Search", level: 80 },
-      { name: "Vector Databases", level: 85 },
-      { name: "Prompt Engineering", level: 85 },
-      { name: "Tool / Function Calling", level: 85 },
-      { name: "Anthropic / Gemini / Groq APIs", level: 85 },
-      { name: "LangChain", level: 80 },
-      { name: "Observability (Langfuse/LangSmith)", level: 80 },
-      { name: "MCP", level: 70 },
-    ],
+    "label": "Data & Analytics",
+    "description": "Prepare, validate, and understand the data behind a model.",
+    "items": [
+      {
+        "name": "Python"
+      },
+      {
+        "name": "SQL"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "pandas"
+      },
+      {
+        "name": "NumPy"
+      },
+      {
+        "name": "PostgreSQL"
+      },
+      {
+        "name": "PySpark"
+      },
+      {
+        "name": "Airflow"
+      },
+      {
+        "name": "Kafka"
+      },
+      {
+        "name": "ETL Pipelines"
+      },
+      {
+        "name": "Data Validation"
+      },
+      {
+        "name": "Power BI"
+      },
+      {
+        "name": "Data Visualization"
+      }
+    ]
   },
   {
-    label: "Inference & Optimization",
-    items: [
-      { name: "vLLM", level: 80 },
-      { name: "Ray", level: 80 },
-      { name: "ONNX / ONNX Runtime", level: 80 },
-      { name: "Quantization", level: 80 },
-      { name: "Knowledge Distillation", level: 80 },
-    ],
+    "label": "Machine Learning & Statistics",
+    "description": "Build baselines, test hypotheses, and evaluate predictions.",
+    "items": [
+      {
+        "name": "scikit-learn"
+      },
+      {
+        "name": "XGBoost"
+      },
+      {
+        "name": "Feature Engineering"
+      },
+      {
+        "name": "Feature Selection"
+      },
+      {
+        "name": "Statistical Modeling"
+      },
+      {
+        "name": "Hypothesis Testing"
+      },
+      {
+        "name": "A/B Testing"
+      },
+      {
+        "name": "Hyperparameter Tuning"
+      },
+      {
+        "name": "Cross-Validation"
+      },
+      {
+        "name": "Imbalanced Learning"
+      },
+      {
+        "name": "Time-Series Forecasting"
+      }
+    ]
   },
   {
-    label: "ML & Deep Learning",
-    items: [
-      { name: "PyTorch", level: 90 },
-      { name: "Model Training & Experimentation", level: 88 },
-      { name: "Computer Vision", level: 85 },
-      { name: "HuggingFace Transformers", level: 85 },
-      { name: "NLP", level: 83 },
-      { name: "XGBoost", level: 85 },
-      { name: "Scikit-learn", level: 85 },
-      { name: "Feature Engineering", level: 85 },
-      { name: "Vision-Language Models (VLMs)", level: 80 },
-      { name: "Comparative Learning", level: 80 },
-      { name: "Statistical Modeling", level: 80 },
-      { name: "Hypothesis Testing / A/B Testing", level: 80 },
-      { name: "Feature Selection / LASSO", level: 80 },
-      { name: "Imbalanced Learning", level: 80 },
-      { name: "Hyperparameter Tuning / Cross-Validation", level: 80 },
-    ],
+    "label": "Deep Learning & Adaptation",
+    "description": "Train models for language and images, and adapt them to new tasks.",
+    "items": [
+      {
+        "name": "PyTorch"
+      },
+      {
+        "name": "Hugging Face Transformers"
+      },
+      {
+        "name": "NLP"
+      },
+      {
+        "name": "Computer Vision"
+      },
+      {
+        "name": "Vision-Language Models"
+      },
+      {
+        "name": "Comparative Learning"
+      },
+      {
+        "name": "Continual Learning"
+      },
+      {
+        "name": "Fine-Tuning"
+      },
+      {
+        "name": "LoRA"
+      },
+      {
+        "name": "QLoRA"
+      }
+    ]
   },
   {
-    label: "Full-Stack Engineering",
-    items: [
-      { name: "Python", level: 92 },
-      { name: "FastAPI", level: 90 },
-      { name: "React / Next.js", level: 85 },
-      { name: "REST APIs", level: 85 },
-      { name: "TypeScript / JavaScript", level: 80 },
-      { name: "WebSockets", level: 78 },
-      { name: "Microservices", level: 78 },
-      { name: "Node.js", level: 76 },
-    ],
+    "label": "Agents & Retrieval",
+    "description": "Connect models to knowledge, tools, and structured workflows.",
+    "items": [
+      {
+        "name": "LangGraph"
+      },
+      {
+        "name": "LangChain"
+      },
+      {
+        "name": "Multi-Agent Systems"
+      },
+      {
+        "name": "RAG"
+      },
+      {
+        "name": "Graph RAG"
+      },
+      {
+        "name": "CRAG"
+      },
+      {
+        "name": "Self-RAG"
+      },
+      {
+        "name": "Embeddings"
+      },
+      {
+        "name": "Semantic Search"
+      },
+      {
+        "name": "Vector Databases"
+      },
+      {
+        "name": "Neo4j"
+      },
+      {
+        "name": "Tool Calling"
+      },
+      {
+        "name": "MCP"
+      },
+      {
+        "name": "Prompt Engineering"
+      }
+    ]
   },
   {
-    label: "AWS",
-    items: [
-      { name: "S3", level: 90 },
-      { name: "Bedrock", level: 88 },
-      { name: "Lambda", level: 82 },
-      { name: "SageMaker", level: 82 },
-      { name: "EC2", level: 80 },
-      { name: "ECS", level: 76 },
-      { name: "Glue", level: 76 },
-      { name: "Rekognition", level: 72 },
-      { name: "OpenSearch", level: 80 },
-      { name: "RDS", level: 80 },
-      { name: "CloudWatch", level: 80 },
-    ],
+    "label": "Evaluation & Efficient Inference",
+    "description": "Measure model behavior and balance quality against serving constraints.",
+    "items": [
+      {
+        "name": "LLM Evaluation"
+      },
+      {
+        "name": "Mechanistic Interpretability"
+      },
+      {
+        "name": "vLLM"
+      },
+      {
+        "name": "Ray"
+      },
+      {
+        "name": "ONNX Runtime"
+      },
+      {
+        "name": "Quantization"
+      },
+      {
+        "name": "Knowledge Distillation"
+      },
+      {
+        "name": "Langfuse"
+      },
+      {
+        "name": "LangSmith"
+      }
+    ]
   },
   {
-    label: "Google Cloud",
-    items: [
-      { name: "BigQuery", level: 85 },
-      { name: "Vertex AI", level: 82 },
-      { name: "GCS", level: 80 },
-      { name: "Dataflow", level: 74 },
-      { name: "Cloud TPUs", level: 72 },
-    ],
+    "label": "Applications & MLOps",
+    "description": "Build usable applications, deploy models, and monitor their behavior.",
+    "items": [
+      {
+        "name": "FastAPI"
+      },
+      {
+        "name": "REST APIs"
+      },
+      {
+        "name": "React"
+      },
+      {
+        "name": "Next.js"
+      },
+      {
+        "name": "Node.js"
+      },
+      {
+        "name": "Docker"
+      },
+      {
+        "name": "Kubernetes"
+      },
+      {
+        "name": "Terraform"
+      },
+      {
+        "name": "MLflow"
+      },
+      {
+        "name": "GitHub Actions"
+      },
+      {
+        "name": "Model Monitoring"
+      }
+    ]
   },
   {
-    label: "Azure",
-    items: [
-      { name: "Azure Machine Learning", level: 82 },
-      { name: "Azure OpenAI Service", level: 82 },
-      { name: "Azure Databricks", level: 78 },
-      { name: "Cognitive Services", level: 76 },
-      { name: "AI Foundry", level: 76 },
-      { name: "AKS", level: 74 },
-      { name: "Azure AI Language", level: 72 },
-      { name: "Computer Vision", level: 72 },
-      { name: "Speech", level: 70 },
-    ],
+    "label": "Cloud Platforms",
+    "description": "Services used for retrieval, analytics, storage, and deployment.",
+    "items": [
+      {
+        "name": "Bedrock",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "S3",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "EC2",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "ECS",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "Lambda",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "SageMaker",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "OpenSearch",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "RDS",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "CloudWatch",
+        "subgroup": "AWS"
+      },
+      {
+        "name": "BigQuery",
+        "subgroup": "Google Cloud"
+      },
+      {
+        "name": "Vertex AI",
+        "subgroup": "Google Cloud"
+      },
+      {
+        "name": "Cloud Storage",
+        "subgroup": "Google Cloud"
+      },
+      {
+        "name": "Azure Machine Learning",
+        "subgroup": "Azure"
+      },
+      {
+        "name": "Azure OpenAI",
+        "subgroup": "Azure"
+      },
+      {
+        "name": "Azure Databricks",
+        "subgroup": "Azure"
+      }
+    ]
   },
   {
-    label: "MLOps & Infra",
-    items: [
-      { name: "Docker", level: 85 },
-      { name: "MLflow", level: 85 },
-      { name: "CI/CD (GitHub Actions)", level: 82 },
-      { name: "Kubernetes", level: 75 },
-      { name: "Terraform", level: 75 },
-    ],
-  },
-  {
-    label: "Data & Systems",
-    items: [
-      { name: "SQL / PostgreSQL", level: 88 },
-      { name: "PySpark", level: 85 },
-      { name: "ETL / Data Pipelines", level: 85 },
-      { name: "Time-Series Forecasting", level: 83 },
-      { name: "Kafka", level: 75 },
-      { name: "Airflow", level: 78 },
-      { name: "R", level: 80 },
-      { name: "pandas / NumPy", level: 80 },
-      { name: "Power BI / Data Visualization", level: 80 },
-    ],
-  },
-  {
-    label: "Collaboration & Delivery",
-    items: [
-      { name: "Cross-Functional Collaboration", level: 90 },
-      { name: "Customer-Facing Communication", level: 85 },
-      { name: "Stakeholder Management", level: 82 },
-      { name: "Technical Documentation", level: 85 },
-      { name: "Agile / Scrum", level: 80 },
-      { name: "Jira", level: 75 },
-    ],
-  },
-  {
-    label: "Clinical & Healthcare Domain",
-    items: [
-      { name: "HIPAA-Compliant ETL", level: 90 },
-      { name: "Survival Modeling", level: 85 },
-      { name: "Medical Imaging (PyRadiomics/DICOM)", level: 80 },
-      { name: "Quantitative Phase Imaging", level: 80 },
-      { name: "Artifact Detection / Background Controls", level: 80 },
-      { name: "Cross-Site Data Harmonization", level: 80 },
-      { name: "Globus / ResearchDrive", level: 80 },
-    ],
-  },
+    "label": "Healthcare & Imaging",
+    "description": "Work with clinical outcomes, medical images, and multi-site research data.",
+    "items": [
+      {
+        "name": "Survival Analysis"
+      },
+      {
+        "name": "Medical Imaging"
+      },
+      {
+        "name": "PyRadiomics"
+      },
+      {
+        "name": "DICOM"
+      },
+      {
+        "name": "Quantitative Phase Imaging"
+      },
+      {
+        "name": "Artifact Detection"
+      },
+      {
+        "name": "Comparative Sampling"
+      },
+      {
+        "name": "Cross-Site Data Harmonization"
+      },
+      {
+        "name": "HIPAA-Compliant Data Pipelines"
+      }
+    ]
+  }
 ];
 
 export const whatIDo = [
   {
-    title: "Agentic AI Systems",
-    detail: "Multi-agent pipelines with LangGraph: retrieval, grading, critics, and escalation that know when to stop.",
+    title: "Start with the data",
+    detail: "I look at every problem through the data: how it was collected, what it represents, and what it leaves out. Data quality, sampling, and useful features matter as much as model architecture.",
+    icon: "data",
+  },
+  {
+    title: "Fit the system to the problem",
+    detail: "Choose the model, data, and pipeline together, based on who will use the system and what they need from it. Weigh quality, latency, memory, and cost against the end result.",
+    icon: "stack",
+  },
+  {
+    title: "Can a model learn without forgetting?",
+    detail: "Explore how models adapt to new tasks, languages, and data while retaining what they already know. Test both what improves and what gets lost along the way.",
     icon: "agents",
   },
   {
-    title: "ML & Forecasting",
-    detail: "Production ML systems: fraud detection, demand forecasting, churn, and drift-aware retraining.",
+    title: "Does the result hold up?",
+    detail: "Check beyond a headline metric: compare baselines, investigate errors, and test across sites, populations, and changing conditions. Ask whether the improvement matters in the setting where the system will be used.",
     icon: "forecast",
-  },
-  {
-    title: "Healthcare ML",
-    detail: "Survival modeling, medical imaging, and HIPAA-compliant pipelines validated across hospital systems.",
-    icon: "health",
-  },
-  {
-    title: "Full-Stack AI Products",
-    detail: "APIs, dashboards, and frontends around ML systems, from FastAPI backends to React/Next.js UIs.",
-    icon: "stack",
   },
 ];
 
 export const facts = [
-  "I've built agentic workflows for engineering log analysis and root-cause investigation across 500K+ historical records.",
   "I'm originally from Hyderabad, India, and have been in Madison, Wisconsin since 2024.",
-  "I've worked on fraud detection across more than 2 million transactions, balancing detection quality against legitimate payment declines.",
-  "Outside of production ML, I build small edge-AI side projects, shrinking models to run without a GPU.",
-  "I finished my MS in Data Science at UW–Madison in 2026 with a 3.95 GPA.",
-  "I've worked across financial services, enterprise AI, and healthcare research, and I pick up new domains fast.",
-];
-
-export const toolLogos = [
-  { name: "AWS", textOnly: true, color: "232F3E" },
-  { name: "Google Cloud", slug: "googlecloud", color: "4285F4" },
-  { name: "Azure", textOnly: true, color: "0078D4" },
-  { name: "Docker", slug: "docker", color: "2496ED" },
-  { name: "Kubernetes", slug: "kubernetes", color: "326CE5" },
-  { name: "Terraform", slug: "terraform", color: "844FBA" },
-  { name: "Jira", slug: "jira", color: "0052CC" },
-  { name: "Git", slug: "git", color: "F05032" },
-  { name: "GitHub Actions", slug: "githubactions", color: "2088FF" },
-  { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
-  { name: "Apache Spark", slug: "apachespark", color: "E25A1C" },
-  { name: "Apache Kafka", slug: "apachekafka", color: "231F20" },
-  { name: "Apache Airflow", slug: "apacheairflow", color: "017CEE" },
-  { name: "Grafana", slug: "grafana", color: "F46800" },
-  { name: "Python", slug: "python", color: "3776AB" },
-  { name: "PyTorch", slug: "pytorch", color: "EE4C2C" },
+  "I finished my MS in Data Science at UW–Madison in 2026. Before that, I studied Computer Science with a focus on AI and ML in Bengaluru.",
 ];
 
 export const methodologies = ["Agile / Scrum", "CI/CD", "Code Review", "Cross-Functional Collaboration", "Technical Documentation"];

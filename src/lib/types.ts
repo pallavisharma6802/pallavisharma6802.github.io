@@ -28,10 +28,11 @@ export interface Experience {
 
 export interface SkillItem {
   name: string;
-  level: number;
+  subgroup?: string;
 }
 
 export interface SkillGroup {
   label: string;
+  description: string;
   items: SkillItem[];
 }

@@ -3,20 +3,7 @@
 import { useId, useState } from "react";
 import { skills } from "@/lib/data";
 
-const areas = [
-  { source: "Clinical & Healthcare Domain", label: "Healthcare & clinical ML", description: "Clinical data, survival analysis, and medical imaging techniques for healthcare problems." },
-  { source: "Data & Systems", label: "Data pipelines & forecasting", description: "Ingest, transform, and analyze data; model trends and build reliable data systems." },
-  { source: "ML & Deep Learning", label: "Model training & deep learning", description: "Train and evaluate models for images, language, and structured data." },
-  { source: "LLMs & GenAI Engineering", label: "AI agents & language models", description: "Build tool-using agents, retrieve grounded information, and evaluate language model behavior." },
-  { source: "Inference & Optimization", label: "Efficient inference & serving", description: "Reduce model size and inference cost, and scale workloads across available hardware." },
-  { source: "Full-Stack Engineering", label: "Applications & APIs", description: "Turn models into usable products with interfaces, services, and APIs." },
-  { source: "MLOps & Infra", label: "Deployment & MLOps", description: "Package, deploy, track, and maintain models and applications." },
-  { source: "AWS", label: "Cloud · AWS", description: "AWS services for storage, model development, and application deployment." },
-  { source: "Google Cloud", label: "Cloud · Google Cloud", description: "Google Cloud tools for analytics, data processing, and machine learning." },
-  { source: "Azure", label: "Cloud · Azure", description: "Azure services for machine learning, language, and cloud infrastructure." },
-  { source: "Collaboration & Delivery", label: "Collaboration & delivery", description: "Work with stakeholders and teams to scope, document, and deliver useful systems." },
-];
-const toolkit = areas.map((area) => ({ ...area, items: skills.find((group) => group.label === area.source)?.items ?? [] }));
+const toolkit = skills;
 
 export default function SkillsGraph() {
   const [active, setActive] = useState(0);
@@ -26,7 +13,7 @@ export default function SkillsGraph() {
   const matches = toolkit.map((group) => ({
     ...group,
     items: group.items.filter((item) =>
-      `${group.label} ${group.source} ${item.name}`.toLowerCase().includes(normalized)
+      `${group.label} ${item.subgroup ?? ""} ${item.name}`.toLowerCase().includes(normalized)
     ),
   }));
   const selected = matches[active];
@@ -100,14 +87,16 @@ export default function SkillsGraph() {
             <div key={group.label} className="mb-8 last:mb-0">
               <h4 className="font-display text-2xl text-ink mb-2">{group.label}</h4>
               <p className="mb-5 text-sm leading-relaxed text-ink-soft">{group.description}</p>
-              <ul className="space-y-3">
-                {group.items.map((item) => (
-                  <li key={item.name} className="flex items-start gap-3 rounded-xl border border-line px-4 py-3" style={{ background: "var(--bg)" }}>
-                    <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--accent)" }} />
-                    <span className="text-sm text-ink leading-relaxed">{item.name}</span>
-                  </li>
-                ))}
-              </ul>
+              {[...new Set(group.items.map((item) => item.subgroup ?? ""))].map((subgroup) => (
+                <div key={subgroup} className="mt-5 first:mt-0">
+                  {subgroup && <h5 className="font-mono text-xs uppercase tracking-wide text-ink-soft mb-3">{subgroup}</h5>}
+                  <ul className="flex flex-wrap gap-2">
+                    {group.items.filter((item) => (item.subgroup ?? "") === subgroup).map((item) => (
+                      <li key={item.name} className="rounded-xl border border-line px-3 py-2 text-sm text-ink" style={{ background: "var(--bg)" }}>{item.name}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           ))}
           {resultCount === 0 && <p className="text-sm text-ink-soft">No skills match “{query}”. Try another tool or area.</p>}

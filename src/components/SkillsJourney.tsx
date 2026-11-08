@@ -5,11 +5,11 @@ import { projects, skills } from "@/lib/data";
 import { Sparkle, Squiggle } from "./Blobs";
 
 const stages = [
-  { title: "Understand & prepare", note: "Start with the problem", description: "Turn raw data and domain context into something a model can learn from. In healthcare, that includes understanding clinical workflows and handling sensitive data responsibly.", groups: ["Data & Systems", "Clinical & Healthcare Domain", "Collaboration & Delivery"], projects: ["spending-forecast", "breast-cancer-optimization"] },
-  { title: "Train & adapt", note: "Find the signal", description: "Build models for the task: computer vision for medical images, forecasting for changing systems, or language models adapted to a new domain.", groups: ["ML & Deep Learning"], projects: ["tissue-motion-forecasting", "critic-guided-continual-learning"] },
-  { title: "Build & evaluate", note: "Make answers earn trust", description: "Connect models to tools and knowledge, then test their behavior. Grounding, evaluation, and human escalation matter as much as a convincing answer.", groups: ["LLMs & GenAI Engineering"], projects: ["doit-kb-agent", "trust-under-pressure", "procedural-intelligence"] },
-  { title: "Optimize & serve", note: "Make it practical", description: "Explore the tradeoffs between model size, latency, throughput, and quality. Choose an inference approach that fits the hardware and the people using it.", groups: ["Inference & Optimization", "Full-Stack Engineering"], projects: ["llm-serving-tradeoffs", "edge-ai-sentiment"] },
-  { title: "Deploy & observe", note: "Keep it working", description: "Ship the application, watch how it behaves, and respond when data or performance changes. Cloud infrastructure and observability close the loop.", groups: ["AWS", "Google Cloud", "Azure", "MLOps & Infra"], projects: ["fraud-detection-mlops", "llm-sentinel", "multi-cloud-agent"] },
+  { title: "Understand & prepare", note: "Start with the problem", description: "Turn raw data and domain context into something a model can learn from. In healthcare, that includes understanding clinical workflows and handling sensitive data responsibly.", groups: ["Data & Analytics", "Healthcare & Imaging"], projects: ["spending-forecast", "breast-cancer-optimization"] },
+  { title: "Train & adapt", note: "Find the signal", description: "Build models for the task: computer vision for medical images, forecasting for changing systems, or language models adapted to a new domain.", groups: ["Machine Learning & Statistics", "Deep Learning & Adaptation"], projects: ["tissue-motion-forecasting", "critic-guided-continual-learning"] },
+  { title: "Build & evaluate", note: "Make answers earn trust", description: "Connect models to tools and knowledge, then test their behavior. Grounding, evaluation, and human escalation matter as much as a convincing answer.", groups: ["Agents & Retrieval"], projects: ["doit-kb-agent", "trust-under-pressure", "procedural-intelligence"] },
+  { title: "Optimize & serve", note: "Make it practical", description: "Explore the tradeoffs between model size, latency, throughput, and quality. Choose an inference approach that fits the hardware and the people using it.", groups: ["Evaluation & Efficient Inference"], projects: ["llm-serving-tradeoffs", "edge-ai-sentiment"] },
+  { title: "Deploy & observe", note: "Keep it working", description: "Ship the application, watch how it behaves, and respond when data or performance changes. Cloud infrastructure and observability close the loop.", groups: ["Applications & MLOps", "Cloud Platforms"], projects: ["fraud-detection-mlops", "llm-sentinel", "multi-cloud-agent"] },
 ];
 
 export default function SkillsJourney() {
@@ -49,10 +49,11 @@ export default function SkillsJourney() {
               <div key={group.label} className="mt-5">
                 <h4 className="font-mono text-[11px] uppercase tracking-wide text-ink-soft mb-2">{group.label}</h4>
                 <ul className="flex flex-wrap gap-2">
-                  {group.items.map((item) => <li key={item.name} className="rounded-lg border border-line px-2.5 py-1.5 text-xs text-ink" style={{ background: "var(--bg)" }}>{item.name}</li>)}
+                  {group.items.slice(0, 6).map((item) => <li key={item.name} className="rounded-lg border border-line px-2.5 py-1.5 text-xs text-ink" style={{ background: "var(--bg)" }}>{item.name}</li>)}
                 </ul>
               </div>
             ))}
+            <a href="#toolkit" className="inline-block mt-6 text-sm text-ink underline underline-offset-4">Explore all skills →</a>
           </div>
           <aside aria-label="Projects using these skills" className="p-4 sm:p-8 border-t md:border-t-0 md:border-l border-line" style={{ background: "var(--bg)" }}>
             <p className="font-hand text-xl text-secondary">Where it comes to life</p>

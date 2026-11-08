@@ -1,4 +1,4 @@
-import { education, toolLogos } from "@/lib/data";
+import { education } from "@/lib/data";
 import SkillsGraph from "./SkillsGraph";
 import SkillsJourney from "./SkillsJourney";
 
@@ -6,31 +6,10 @@ export default function SkillsGrid() {
   return (
     <div>
       <SkillsJourney />
-      <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Browse the full toolkit</h3>
+      <h3 id="toolkit" className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Browse the full toolkit</h3>
       <SkillsGraph />
+      <p className="mt-6 text-sm leading-relaxed text-ink-soft"><span className="font-medium text-ink">Working with teams:</span> Cross-functional collaboration · Stakeholder communication · Technical documentation · Agile · Jira</p>
 
-      <div className="mt-14">
-      <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Tools &amp; Platforms</h3>
-      <div className="grid grid-cols-4 sm:grid-cols-8 gap-3 mb-14">
-        {toolLogos.map((t) => (
-          <div
-            key={t.name}
-            title={t.name}
-            className="reveal aspect-square rounded-2xl border border-line bg-raised flex items-center justify-center p-3 hover:shadow-[0_6px_20px_var(--shadow)] transition-shadow"
-          >
-            {t.textOnly ? (
-              <span className="font-display font-semibold text-sm text-center leading-tight" style={{ color: `#${t.color}` }}>
-                {t.name}
-              </span>
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={`https://cdn.simpleicons.org/${t.slug}/${t.color}`} alt={t.name} className="h-full w-full object-contain" loading="lazy" />
-            )}
-          </div>
-        ))}
-      </div>
-
-      </div>
       <div className="mt-16 pt-10 border-t border-line">
         <h3 className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Education</h3>
         <div className="space-y-4">
