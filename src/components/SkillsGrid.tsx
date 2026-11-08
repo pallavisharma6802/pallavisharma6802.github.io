@@ -1,13 +1,10 @@
 import { education } from "@/lib/data";
-import SkillsGraph from "./SkillsGraph";
 import SkillsJourney from "./SkillsJourney";
 
 export default function SkillsGrid() {
   return (
     <div>
       <SkillsJourney />
-      <h3 id="toolkit" className="font-mono text-xs uppercase tracking-wide text-ink-faint mb-5">Browse the full toolkit</h3>
-      <SkillsGraph />
       <p className="mt-6 text-sm leading-relaxed text-ink-soft"><span className="font-medium text-ink">Working with teams:</span> Cross-functional collaboration · Stakeholder communication · Technical documentation · Agile · Jira</p>
 
       <div className="mt-16 pt-10 border-t border-line">

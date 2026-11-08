@@ -349,6 +349,9 @@ export const skills: SkillGroup[] = [
       },
       {
         "name": "Time-Series Forecasting"
+      },
+      {
+        "name": "Survival Analysis"
       }
     ]
   },
@@ -571,39 +574,6 @@ export const skills: SkillGroup[] = [
       {
         "name": "Azure Databricks",
         "subgroup": "Azure"
-      }
-    ]
-  },
-  {
-    "label": "Healthcare & Imaging",
-    "description": "Work with clinical outcomes, medical images, and multi-site research data.",
-    "items": [
-      {
-        "name": "Survival Analysis"
-      },
-      {
-        "name": "Medical Imaging"
-      },
-      {
-        "name": "PyRadiomics"
-      },
-      {
-        "name": "DICOM"
-      },
-      {
-        "name": "Quantitative Phase Imaging"
-      },
-      {
-        "name": "Artifact Detection"
-      },
-      {
-        "name": "Comparative Sampling"
-      },
-      {
-        "name": "Cross-Site Data Harmonization"
-      },
-      {
-        "name": "HIPAA-Compliant Data Pipelines"
       }
     ]
   }
