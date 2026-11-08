@@ -1,7 +1,9 @@
+import { experience } from "@/lib/data";
+
 const stats = [
   { value: "14+", label: "Projects Shipped" },
-  { value: "6", label: "Roles" },
-  { value: "3+", label: "Years Experience" },
+  { value: String(experience.length), label: "Roles" },
+  { value: "4+", label: "Years Experience" },
   { value: "2026", label: "MS Data Science" },
 ];
 

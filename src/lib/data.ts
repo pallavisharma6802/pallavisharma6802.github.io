@@ -14,104 +14,105 @@ export const profile = {
 export const bio = {
   greeting: "Hi, I'm Pallavi.",
   body:
-    "I'm an ML engineer with 3+ years building AI products end to end: agents, LLM pipelines, full-stack apps, and ML systems in healthcare and IT. My work is in production, used by real teams and real patients, not sitting in a notebook. I thrive in cross-functional, collaborative teams, and I lean toward customer-facing roles where I can work directly with the people using what I build. I pick up a new domain fast, and I'm focused on ML and AI work broadly. The title matters less than the problem.",
+    "I'm an ML engineer with 4+ years building AI products end to end: agents, LLM pipelines, full-stack apps, and ML systems across financial services, enterprise applications, and healthcare research. I build beyond the model: the data pipelines, APIs, and applications that make it useful. I thrive in cross-functional, collaborative teams, and I lean toward customer-facing roles where I can work directly with the people using what I build. I pick up a new domain fast, and I'm focused on ML and AI work broadly. The title matters less than the problem.",
 };
 
 
 export const experience: Experience[] = [
   {
-    role: "Machine Learning Engineer",
-    org: "UW School of Medicine and Public Health",
-    category: "Healthcare ML",
-    employmentType: "Full-time",
-    location: "Madison, Wisconsin",
-    workMode: "Hybrid",
-    dates: "Sep 2026 – Present",
-    duration: "3 mos",
-    summary: [
-      "Cancer often shows up systemically before it's caught locally: a visible change somewhere else in the body, a sense that something is off, even before a diagnosis exists. I'm working on whether that shows up measurably in the skin.",
-      "I work with clinical researchers on quantitative phase imaging (QPI), studying how dry mass, refractive index, and cell morphology in skin tissue could serve as a biomarker for systemic cancer, building PyTorch-based image analysis pipelines and using distributed computing to process large imaging datasets while testing whether the patterns hold up across samples.",
-      "The goal is a real, skin-visible biomarker for early, non-invasive cancer detection, not a pattern a model memorized.",
+    "role": "Machine Learning Engineer",
+    "org": "University of Wisconsin–Madison · School of Medicine and Public Health, Department of Anesthesiology",
+    "category": "Healthcare ML",
+    "employmentType": "",
+    "location": "Madison, Wisconsin",
+    "workMode": "",
+    "dates": "Sep 2026 – Present",
+    "duration": "",
+    "summary": [
+      "I work with clinical researchers to investigate whether quantitative phase imaging of skin tissue can reveal biomarkers for early cancer detection.",
+      "I fine-tune vision-language models in PyTorch on 100K+ QPI samples across 8+ tissue and cell categories. I redesigned single-image classification into a three-image comparative learning framework, with tissue-level sampling, input standardization, and data-quality checks.",
+      "Cell-free background controls help separate biological signals from optical artifacts. In comparisons of the single-image and three-image architectures, AUROC improved from 0.85 to 0.91, sensitivity from 82% to 89%, and specificity from 84% to 90%."
     ],
-    skills: ["Computer Vision", "PyTorch", "Distributed Computing", "Medical Imaging"],
+    "skills": [
+      "PyTorch",
+      "Vision-Language Models",
+      "Comparative Learning",
+      "Quantitative Phase Imaging",
+      "Hypothesis Testing"
+    ]
   },
   {
-    role: "Graduate Researcher",
-    org: "UW–Madison Computer Sciences",
-    category: "LLM Evaluation",
-    employmentType: "Part-time",
-    location: "Madison, Wisconsin",
-    workMode: "Hybrid",
-    dates: "Nov 2025 – May 2026",
-    duration: "7 mos",
-    summary: [
-      "Most LLM personalization research assumes preferences are stable. My research asks what happens when they aren't: when a stated preference in a moment of fear or stress isn't what someone actually wants. That question sits at the intersection of preference modeling and AI alignment.",
-      "The work spans synthetic simulation, mechanistic interpretability, and inference-time adaptation via activation steering. The most interesting finding so far: the strongest in-distribution forecasting model degraded the most under distribution shift, a reminder that clean leaderboard results don't always mean robust systems. Targeting publication.",
+    "role": "AI/ML Engineer",
+    "org": "Qualcomm",
+    "category": "Agents & RAG",
+    "employmentType": "",
+    "location": "Wisconsin, USA",
+    "workMode": "",
+    "dates": "Jan 2026 – May 2026",
+    "duration": "5 mos",
+    "summary": [
+      "Engineering logs contain the clues to an incident, but finding and connecting them takes time. I built an agentic RAG assistant for log analysis and root-cause investigation across 500K+ historical records.",
+      "The system combined LangGraph and Amazon Bedrock with OpenSearch retrieval, reaching 91% Recall@5. Supervised fine-tuning on engineering incident data improved root-cause classification accuracy from 68% to 84%.",
+      "BigQuery-backed analytical tools correlated incident patterns across 25+ variables, reducing manual investigation time by 30% in benchmark workflows. I deployed the Docker and FastAPI application on AWS EC2 with S3 storage and CloudWatch monitoring; 97% of evaluated agent workflows executed successfully."
     ],
-    skills: ["In-Context Learning", "Model Evaluation", "Mechanistic Interpretability", "LLMs"],
+    "skills": [
+      "LangGraph",
+      "Amazon Bedrock",
+      "OpenSearch",
+      "LLM Fine-Tuning",
+      "BigQuery",
+      "FastAPI",
+      "Docker"
+    ]
   },
   {
-    role: "Software Developer",
-    org: "UW–Madison Division of Information Technology (DoIT)",
-    category: "Agents & RAG",
-    employmentType: "Part-time",
-    location: "Madison, Wisconsin",
-    workMode: "Hybrid",
-    dates: "Apr 2025 – May 2026",
-    duration: "1 yr 2 mos",
-    summary: [
-      "I used to answer IT support tickets manually. Then I built a system to do it.",
-      "The interesting engineering problem wasn't retrieval; it was knowing when the system genuinely found an answer versus when it was guessing. The solution was an external grounding check the model couldn't override, combined with graph-augmented retrieval that walks semantic neighbors when the first pass misses.",
-      "The system is live, handling real queries, and when it can't answer, it says so and hands off to a human.",
+    "role": "Machine Learning Researcher",
+    "org": "University of Wisconsin–Madison · School of Medicine and Public Health, IDiA Lab",
+    "category": "Healthcare ML",
+    "employmentType": "",
+    "location": "Madison, Wisconsin",
+    "workMode": "",
+    "dates": "Oct 2024 – Oct 2025",
+    "duration": "1 yr 1 mo",
+    "summary": [
+      "At the IDiA Lab, led by Dr. Pallavi Tiwari, I worked on survival prediction using clinical data and medical images from six hospital systems.",
+      "I developed a PyTorch-based DeepHit model that improved C-index from 0.74 to 0.82 over CoxNet, with survival stratification evaluated using Kaplan–Meier curves and log-rank tests. I extracted radiomic features with PyRadiomics and used LASSO-based selection alongside clinical features.",
+      "The work also involved terabyte-scale ETL, cross-site harmonization, DICOM metadata processing, and record-level lineage. I managed secure data transfer and storage using Globus and ResearchDrive to support HIPAA-compliant research workflows."
     ],
-    skills: ["React.js", "Node.js", "LangGraph", "Retrieval"],
+    "skills": [
+      "PyTorch",
+      "DeepHit",
+      "Survival Analysis",
+      "PyRadiomics",
+      "DICOM",
+      "HIPAA-Compliant ETL"
+    ]
   },
   {
-    role: "Machine Learning Research Intern",
-    org: "UW School of Medicine and Public Health",
-    category: "Healthcare ML",
-    employmentType: "",
-    location: "Madison, Wisconsin",
-    workMode: "Hybrid",
-    dates: "Oct 2024 – Oct 2025",
-    duration: "1 yr 1 mo",
-    summary: [
-      "Clinical ML is unforgiving because the cost of a wrong prediction is a person, not a metric.",
-      "Built survival models across 6 hospital systems and replaced CoxNet with a DeepHit-based deep neural network. Midway through, I found a data prep bug quietly biasing feature selection toward scanner artifacts instead of disease signal, caught because I questioned a result that looked too clean; fixing it changed the model substantially.",
+    "role": "Data Scientist",
+    "org": "Mastercard",
+    "category": "Forecasting & MLOps",
+    "employmentType": "",
+    "location": "India",
+    "workMode": "",
+    "dates": "Apr 2022 – Aug 2024",
+    "duration": "2 yrs 5 mos",
+    "summary": [
+      "Fraud detection means finding high-risk activity while keeping legitimate payments moving. I developed and benchmarked 6+ classification models on more than 2 million financial transactions.",
+      "Using Python, SQL, XGBoost, PySpark, and Azure Databricks, I engineered behavioral features and tuned models for imbalanced data. Precision improved from 81% to 88%, recall from 72% to 79%, and F1 from 0.76 to 0.83.",
+      "I automated ETL and feature pipelines with Airflow and Databricks, reducing processing time by 30%, and tracked 20+ experiments with MLflow. Power BI dashboards helped monitor performance and prediction drift, supporting threshold adjustments that reduced false positives by 12%."
     ],
-    skills: ["Deep Neural Networks (DNN)", "Survival Analysis", "PyRadiomics", "HIPAA-Compliant ETL"],
-  },
-  {
-    role: "Data Scientist",
-    org: "SCL IT Technologies",
-    category: "Healthcare ML",
-    employmentType: "",
-    location: "India",
-    workMode: "Remote",
-    dates: "Aug 2023 – Aug 2024",
-    duration: "1 yr 1 mo",
-    summary: [
-      "Clinical trial data is only useful if it's complete and trustworthy before it reaches a statistician.",
-      "I built the pipeline end to end: Airflow jobs that pulled raw trial data from AWS S3 and Medidata Rave EDC every day, PySpark and Spark NLP to turn unstructured EHR and claims text into regulatory-compliant variables mapped to Veeva Vault (75% less time to harmonize), and an XGBoost anomaly detector that caught 94% of rule violations before Pinnacle 21 audits. Dataset completeness went from 92% to 99.8%.",
-      "I also modeled patient dropout and screen failures with LightGBM (0.79 C-index) and put predicted adverse events in Power BI for the clinical data managers.",
-    ],
-    skills: ["Data Science", "Apache Airflow", "PySpark", "XGBoost"],
-  },
-  {
-    role: "Machine Learning Intern",
-    org: "Persistent Systems",
-    category: "Forecasting & MLOps",
-    employmentType: "Internship",
-    location: "Bengaluru, Karnataka, India",
-    workMode: "Remote",
-    dates: "Jan 2024 – Apr 2024",
-    duration: "4 mos",
-    summary: [
-      "Standard churn prediction on this dataset used structured features only. I added customer service text, fine-tuned DistilBERT for sentiment and urgency, fused the embeddings with the structured features, and compared both versions properly.",
-      "The NLP features moved recall from 0.61 to 0.86, a gap large enough to suggest other structured-only datasets are leaving real signal untapped simply because no one tried the text.",
-    ],
-    skills: ["Data Analytics", "Machine Learning", "DistilBERT", "NLP"],
-  },
+    "skills": [
+      "Python",
+      "SQL",
+      "XGBoost",
+      "PySpark",
+      "Azure Databricks",
+      "Airflow",
+      "MLflow",
+      "Power BI"
+    ]
+  }
 ];
 
 export const categories = ["All", "Agents & RAG", "LLM Evaluation", "Healthcare ML", "Forecasting & MLOps", "Inference & Infra"];
@@ -133,7 +134,7 @@ export const projects: Project[] = [
     title: "DoIT Knowledge Base Agent",
     category: "Agents & RAG",
     story:
-      "I started at DoIT answering Help Desk tickets myself: NetID resets, Duo lockouts, VPN, O365. I moved into the Software Developer role, and kept the thing I'd learned on the phones: most of what an agent does is look up the same ~400 KB articles and decide how confident to be. So I built the agent that does that part.",
+      "IT support questions often come back to the same knowledge base articles. I built this project to explore how an agent can retrieve the right sources, provide cited answers, and escalate when the available information is insufficient.",
     blurb:
       "A 4-node LangGraph pipeline over 392 scraped DoIT KB articles. Classify (simple vs. complex), retrieve the top 3 unseen articles from ChromaDB, generate an answer with citations, then route: simple queries resolve in one turn, complex ones loop up to 4 turns before escalating to a human agent with the best answer still attached.",
     metrics: ["Recall@3: 95.4% (104/109 queries)", "392 KB articles indexed across 30 categories"],
@@ -275,6 +276,8 @@ export const skills: SkillGroup[] = [
       { name: "RAG / CRAG / Self-RAG", level: 90 },
       { name: "LLM Evaluation & Evals", level: 90 },
       { name: "Fine-Tuning (LoRA/PEFT)", level: 85 },
+      { name: "QLoRA", level: 80 },
+      { name: "Embeddings / Semantic Search", level: 80 },
       { name: "Vector Databases", level: 85 },
       { name: "Prompt Engineering", level: 85 },
       { name: "Tool / Function Calling", level: 85 },
@@ -305,6 +308,13 @@ export const skills: SkillGroup[] = [
       { name: "XGBoost", level: 85 },
       { name: "Scikit-learn", level: 85 },
       { name: "Feature Engineering", level: 85 },
+      { name: "Vision-Language Models (VLMs)", level: 80 },
+      { name: "Comparative Learning", level: 80 },
+      { name: "Statistical Modeling", level: 80 },
+      { name: "Hypothesis Testing / A/B Testing", level: 80 },
+      { name: "Feature Selection / LASSO", level: 80 },
+      { name: "Imbalanced Learning", level: 80 },
+      { name: "Hyperparameter Tuning / Cross-Validation", level: 80 },
     ],
   },
   {
@@ -331,6 +341,9 @@ export const skills: SkillGroup[] = [
       { name: "ECS", level: 76 },
       { name: "Glue", level: 76 },
       { name: "Rekognition", level: 72 },
+      { name: "OpenSearch", level: 80 },
+      { name: "RDS", level: 80 },
+      { name: "CloudWatch", level: 80 },
     ],
   },
   {
@@ -376,6 +389,9 @@ export const skills: SkillGroup[] = [
       { name: "Time-Series Forecasting", level: 83 },
       { name: "Kafka", level: 75 },
       { name: "Airflow", level: 78 },
+      { name: "R", level: 80 },
+      { name: "pandas / NumPy", level: 80 },
+      { name: "Power BI / Data Visualization", level: 80 },
     ],
   },
   {
@@ -396,6 +412,9 @@ export const skills: SkillGroup[] = [
       { name: "Survival Modeling", level: 85 },
       { name: "Medical Imaging (PyRadiomics/DICOM)", level: 80 },
       { name: "Quantitative Phase Imaging", level: 80 },
+      { name: "Artifact Detection / Background Controls", level: 80 },
+      { name: "Cross-Site Data Harmonization", level: 80 },
+      { name: "Globus / ResearchDrive", level: 80 },
     ],
   },
 ];
@@ -424,12 +443,12 @@ export const whatIDo = [
 ];
 
 export const facts = [
-  "I started on a Help Desk answering IT tickets, then built the agent that automates that job.",
+  "I've built agentic workflows for engineering log analysis and root-cause investigation across 500K+ historical records.",
   "I'm originally from Hyderabad, India, and have been in Madison, Wisconsin since 2024.",
-  "My graduate research is a side quest into AI alignment: when should a model trust what a user says?",
+  "I've worked on fraud detection across more than 2 million transactions, balancing detection quality against legitimate payment declines.",
   "Outside of production ML, I build small edge-AI side projects, shrinking models to run without a GPU.",
   "I finished my MS in Data Science at UW–Madison in 2026 with a 3.95 GPA.",
-  "I've worked across healthcare and IT operations, and I pick up new domains fast.",
+  "I've worked across financial services, enterprise AI, and healthcare research, and I pick up new domains fast.",
 ];
 
 export const toolLogos = [

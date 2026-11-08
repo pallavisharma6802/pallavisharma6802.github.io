@@ -43,7 +43,7 @@ export default function ExperienceSection() {
             </div>
             <div className="text-sm text-ink-soft mt-0.5">{e.org}</div>
             <div className="font-mono text-xs text-ink-faint uppercase tracking-wide mt-1">
-              {e.dates} &middot; {e.duration} &middot; {e.location} &middot; {e.workMode}
+              {[e.dates, e.duration, e.location, e.workMode].filter(Boolean).join(" · ")}
             </div>
 
             <div className="mt-4 space-y-3">
