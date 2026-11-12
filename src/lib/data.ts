@@ -7,7 +7,7 @@ export const profile = {
   email: "sharmapallavi6802@gmail.com",
   linkedin: "https://www.linkedin.com/in/pallavisharma6802/",
   github: "https://github.com/pallavisharma6802",
-  location: "Madison, WI",
+  location: "Dearborn, Michigan",
   photo: "/profile.jpeg",
 };
 
@@ -24,8 +24,8 @@ export const experience: Experience[] = [
     "org": "University of Wisconsin–Madison · School of Medicine and Public Health",
     "category": "Healthcare ML",
     "employmentType": "",
-    "location": "Madison, Wisconsin",
-    "workMode": "",
+    "location": "Michigan, United States",
+    "workMode": "Remote",
     "dates": "Sep 2026 – Present",
     "duration": "",
     "summary": [

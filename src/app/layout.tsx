@@ -43,7 +43,7 @@ const hand = Caveat({
 
 export const metadata: Metadata = {
   title: "Pallavi Sharma, ML Engineer",
-  description: "Portfolio of Pallavi Sharma, an ML engineer based in Madison, WI.",
+  description: "Portfolio of Pallavi Sharma, an ML engineer based in Dearborn, Michigan.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,6 +1,6 @@
 # Pallavi Sharma
 
-ML Engineer · Madison, WI
+ML Engineer · Dearborn, Michigan
 
 MS in Data Science, University of Wisconsin–Madison
 
