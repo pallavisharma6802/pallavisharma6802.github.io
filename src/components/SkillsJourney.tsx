@@ -125,7 +125,7 @@ export default function SkillsJourney() {
                   {stage.projects.map((slug) => projects.find((project) => project.slug === slug)).map((project) => project && (
                     <a key={project.slug} href={project.repoUrl} target="_blank" rel="noreferrer" className="block rounded-2xl border border-line p-4 hover:border-current transition-colors text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
                       <h4 className="font-display text-lg leading-snug">{project.title} <span aria-hidden="true">↗</span></h4>
-                      <p className="mt-2 text-xs leading-relaxed text-ink-soft">{project.metrics[0]}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-ink-soft">{project.metrics[0] ?? project.blurb}</p>
                       <span className="block mt-3 font-mono text-[10px] uppercase tracking-wide">View project →</span>
                     </a>
                   ))}

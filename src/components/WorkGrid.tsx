@@ -18,7 +18,7 @@ function ProjectTile({ project }: { project: Project }) {
           <CategoryIcon category={project.category} className="h-8 w-8 opacity-90" />
         </div>
         <h3 className="mt-6 font-display text-lg sm:text-xl text-white leading-snug pr-6">{project.title}</h3>
-        <p className="mt-2 text-xs text-white/75 leading-relaxed max-w-[90%]">{project.metrics[0]}</p>
+        <p className="mt-2 text-xs text-white/75 leading-relaxed max-w-[90%]">{project.metrics[0] ?? project.blurb}</p>
         <span className="absolute bottom-4 right-4 text-white/80 text-sm font-mono transition-transform group-hover:translate-y-[-2px]">
           {open ? "−" : "+"}
         </span>
@@ -31,7 +31,8 @@ function ProjectTile({ project }: { project: Project }) {
               {project.story}
             </p>
           )}
-          <p className="text-sm text-ink-soft leading-relaxed">{project.blurb}</p>
+          <p className="text-sm text-ink-soft leading-relaxed">{project.description ? <strong className="font-medium text-ink">{project.blurb}</strong> : project.blurb}</p>
+          {project.description && <div className="mt-3 space-y-3">{project.description.map((paragraph) => <p key={paragraph} className="text-sm text-ink-soft leading-relaxed">{paragraph}</p>)}</div>}
 
           {project.metrics.length > 0 && (
             <div className="mt-3 flex flex-col gap-1">

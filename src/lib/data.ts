@@ -21,7 +21,7 @@ export const bio = {
 export const experience: Experience[] = [
   {
     "role": "Machine Learning Engineer",
-    "org": "University of Wisconsin–Madison · School of Medicine and Public Health, Department of Anesthesiology",
+    "org": "University of Wisconsin–Madison · School of Medicine and Public Health",
     "category": "Healthcare ML",
     "employmentType": "",
     "location": "Madison, Wisconsin",
@@ -29,16 +29,17 @@ export const experience: Experience[] = [
     "dates": "Sep 2026 – Present",
     "duration": "",
     "summary": [
-      "I work with clinical researchers to investigate whether quantitative phase imaging of skin tissue can reveal biomarkers for early cancer detection.",
-      "I fine-tune vision-language models in PyTorch on 100K+ QPI samples across 8+ tissue and cell categories. I redesigned single-image classification into a three-image comparative learning framework, with tissue-level sampling, input standardization, and data-quality checks.",
-      "Cell-free background controls help separate biological signals from optical artifacts. In comparisons of the single-image and three-image architectures, AUROC improved from 0.85 to 0.91, sensitivity from 82% to 89%, and specificity from 84% to 90%."
+      "I work with clinical researchers to investigate whether quantitative phase imaging of skin tissue can reveal early cancer biomarkers. I handle the technical side of the project, from preparing imaging data to training models and evaluating their results.",
+      "I fine-tune vision-language models in PyTorch on 100K+ QPI images, using Google Cloud Vertex AI and Cloud Storage for training and data management. I also redesigned our original single-image classification approach into a three-image comparative learning framework to help models distinguish meaningful biological differences from imaging variations.",
+      "The new approach improved AUROC from 0.85 to 0.91, sensitivity from 82% to 89%, and specificity from 84% to 90%. I work directly with clinicians on research requirements, experiments, and understanding where the models succeed or fall short."
     ],
     "skills": [
       "PyTorch",
       "Vision-Language Models",
+      "Vertex AI",
+      "GCP",
       "Comparative Learning",
-      "Quantitative Phase Imaging",
-      "Hypothesis Testing"
+      "Model Evaluation"
     ]
   },
   {
@@ -51,18 +52,21 @@ export const experience: Experience[] = [
     "dates": "Jan 2026 – May 2026",
     "duration": "5 mos",
     "summary": [
-      "Engineering logs contain the clues to an incident, but finding and connecting them takes time. I built an agentic RAG assistant for log analysis and root-cause investigation across 500K+ historical records.",
-      "The system combined LangGraph and Amazon Bedrock with OpenSearch retrieval, reaching 91% Recall@5. Supervised fine-tuning on engineering incident data improved root-cause classification accuracy from 68% to 84%.",
-      "BigQuery-backed analytical tools correlated incident patterns across 25+ variables, reducing manual investigation time by 30% in benchmark workflows. I deployed the Docker and FastAPI application on AWS EC2 with S3 storage and CloudWatch monitoring; 97% of evaluated agent workflows executed successfully."
+      "Engineering logs contain a lot of information about why something failed, but finding the relevant details and connecting them can take hours. I built a full-stack AI troubleshooting application that helps engineers investigate incidents, search historical records, and review evidence-backed diagnoses.",
+      "The application used React, TypeScript, Node.js, and Flask, with LangGraph coordinating the AI workflows. Gemini handled initial triage, Amazon Bedrock supported diagnostic reasoning, and OpenAI API-based evaluation helped assess response quality. I also fine-tuned a domain-specific incident classifier, improving accuracy from 68% to 84%, and built an OpenSearch retrieval pipeline that reached 91% Recall@5 across 500K+ records.",
+      "I deployed the services using Docker on AWS EC2, with S3 storage and CloudWatch monitoring. I worked directly with troubleshooting engineers to investigate incorrect diagnoses and improve the application based on their feedback. In benchmark workflows, manual investigation time dropped by 30%."
     ],
     "skills": [
+      "React",
+      "TypeScript",
+      "Flask",
       "LangGraph",
       "Amazon Bedrock",
+      "Gemini",
       "OpenSearch",
-      "LLM Fine-Tuning",
-      "BigQuery",
-      "FastAPI",
-      "Docker"
+      "RAG",
+      "AWS",
+      "LLM Evaluation"
     ]
   },
   {
@@ -75,9 +79,9 @@ export const experience: Experience[] = [
     "dates": "Oct 2024 – Oct 2025",
     "duration": "1 yr 1 mo",
     "summary": [
-      "At the IDiA Lab, led by Dr. Pallavi Tiwari, I worked on survival prediction using clinical data and medical images from six hospital systems.",
-      "I developed a PyTorch-based DeepHit model that improved C-index from 0.74 to 0.82 over CoxNet, with survival stratification evaluated using Kaplan–Meier curves and log-rank tests. I extracted radiomic features with PyRadiomics and used LASSO-based selection alongside clinical features.",
-      "The work also involved terabyte-scale ETL, cross-site harmonization, DICOM metadata processing, and record-level lineage. I managed secure data transfer and storage using Globus and ResearchDrive to support HIPAA-compliant research workflows."
+      "At the IDiA Lab, led by Dr. Pallavi Tiwari, I worked on predicting patient survival outcomes using clinical data and medical images collected from six hospital systems.",
+      "I developed a DeepHit survival prediction model in PyTorch, improving C-index from 0.74 to 0.82 compared with CoxNet. I also extracted radiomic features from medical images, combined them with clinical variables, and evaluated survival predictions using Kaplan–Meier curves and log-rank tests.",
+      "A large part of the work involved making datasets from different hospitals usable together. I built data-processing pipelines, standardized imaging metadata, investigated differences in acquisition settings, and managed secure clinical data transfers using Globus and ResearchDrive."
     ],
     "skills": [
       "PyTorch",
@@ -85,7 +89,8 @@ export const experience: Experience[] = [
       "Survival Analysis",
       "PyRadiomics",
       "DICOM",
-      "HIPAA-Compliant ETL"
+      "ETL",
+      "Clinical Data"
     ]
   },
   {
@@ -98,19 +103,20 @@ export const experience: Experience[] = [
     "dates": "Apr 2022 – Aug 2024",
     "duration": "2 yrs 5 mos",
     "summary": [
-      "Fraud detection means finding high-risk activity while keeping legitimate payments moving. I developed and benchmarked 6+ classification models on more than 2 million financial transactions.",
-      "Using Python, SQL, XGBoost, PySpark, and Azure Databricks, I engineered behavioral features and tuned models for imbalanced data. Precision improved from 81% to 88%, recall from 72% to 79%, and F1 from 0.76 to 0.83.",
-      "I automated ETL and feature pipelines with Airflow and Databricks, reducing processing time by 30%, and tracked 20+ experiments with MLflow. Power BI dashboards helped monitor performance and prediction drift, supporting threshold adjustments that reduced false positives by 12%."
+      "Fraud detection is a balancing act: catching suspicious transactions without unnecessarily blocking legitimate payments. I worked with fraud operations teams to develop, deploy, and monitor machine learning models across more than 2 million transactions.",
+      "I built fraud-scoring models using XGBoost, worked with behavioral transaction features, and used SHAP to explain model predictions. Precision improved from 81% to 88%, recall from 72% to 79%, and F1 from 0.76 to 0.83. I also developed production data pipelines using Azure Databricks, PySpark, SQL, and Airflow, reducing processing time by 30%.",
+      "I built interactive Plotly Dash applications so fraud teams could investigate flagged transactions, understand model predictions, and review false positives. MLflow helped track model experiments and updates, while feedback from fraud analysts informed threshold adjustments that reduced false-positive alerts by 12%."
     ],
     "skills": [
       "Python",
       "SQL",
       "XGBoost",
-      "PySpark",
+      "SHAP",
       "Azure Databricks",
-      "Airflow",
+      "PySpark",
+      "Plotly Dash",
       "MLflow",
-      "Power BI"
+      "MLOps"
     ]
   }
 ];
@@ -119,15 +125,33 @@ export const categories = ["All", "Agents & RAG", "LLM Evaluation", "Healthcare 
 
 export const projects: Project[] = [
   {
-    slug: "multi-cloud-agent",
-    title: "Agentic Multi-Cloud Ticket Resolution",
-    category: "Agents & RAG",
-    blurb:
-      "A cyclic LangGraph of six agents for IT ticket resolution: intent and priority classification, CRAG document grading, a Self-RAG faithfulness critic, and a Continuation Agent that replaces every fixed retry cap with a reasoned decision. Runs against a real, labeled IT/SaaS domain pack with a from-scratch eval harness and a BigQuery and Grafana analytics layer.",
-    metrics: ["Migrated Ollama to Bedrock: 44s to 1.5s latency", "Full eval harness measuring the agentic pipeline, not just claiming it"],
-    stack: ["LangGraph", "AWS Bedrock", "Azure Text Analytics", "Pinecone", "BigQuery", "Grafana", "Terraform", "Next.js"],
-    repoUrl: "https://github.com/pallavisharma6802/Multi-Cloud-AI-Agent-for-Ticket-Resolution",
-    featured: true,
+    "slug": "multi-cloud-agent",
+    "title": "Agentic Multi-Cloud Ticket Resolution",
+    "category": "Agents & RAG",
+    "blurb": "Built and deployed an eight-agent AI troubleshooting platform with RAG, automated evaluations, and multi-cloud integrations.",
+    "description": [
+      "What started as a simple ticket classification and retrieval system grew into a full-stack application with a Next.js frontend, FastAPI backend, and an eight-agent LangGraph workflow.",
+      "The agents handle incident classification, document retrieval, relevance grading, response generation, verification, and escalation. Pinecone provides hybrid search over a real VS Code documentation knowledge base, while Amazon Bedrock Nova Lite powers the LLM workflows. CRAG and Self-RAG help assess whether retrieved documents and generated answers are trustworthy before a ticket is resolved.",
+      "The application also uses Azure AI Text Analytics for entity extraction, PostgreSQL for ticket history, and BigQuery with Grafana for analytics. I built an evaluation pipeline to measure retrieval quality, response faithfulness, and agent behavior, with Docker and GitHub Actions supporting testing and deployment."
+    ],
+    "metrics": [],
+    "stack": [
+      "LangGraph",
+      "AWS Bedrock",
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Azure AI",
+      "Pinecone",
+      "PostgreSQL",
+      "GCP BigQuery",
+      "Grafana",
+      "LangSmith",
+      "Docker"
+    ],
+    "liveUrl": "https://multi-cloud-ai-agent-for-ticket-res.vercel.app/",
+    "repoUrl": "https://github.com/pallavisharma6802/Multi-Cloud-AI-Agent-for-Ticket-Resolution",
+    "featured": true
   },
   {
     slug: "doit-kb-agent",

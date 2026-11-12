@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   category: string;
   blurb: string;
+  description?: string[];
   /** longer origin story, rendered instead of / before blurb when present */
   story?: string;
   metrics: string[];
